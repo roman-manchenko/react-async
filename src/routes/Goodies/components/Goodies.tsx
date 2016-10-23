@@ -7,7 +7,7 @@ class Goodies extends React.Component <any, any>{
         let url = window.location.protocol + '//' + window.location.host + '/' + "Settings.site.name" + '/'
         let img = window.location.protocol + '//' + window.location.host + '/static/img/resources/'
 
-        return (<div>
+        return (<div className="goodies">
                 <div className="dash-tab-title">
                     <h3>Goodies</h3>
                     <h3 className="sub-title">Here are some goodies for you to use to easily link to your
