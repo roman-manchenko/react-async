@@ -2,14 +2,12 @@ import * as React from 'react'
 
 import './goodies.scss'
 
-// replace it with something real
-interface DDD {
-  status: any
-}
+class Goodies extends React.Component <any, any>{
+    render() {
+        let url = window.location.protocol + '//' + window.location.host + '/' + "Settings.site.name" + '/'
+        let img = window.location.protocol + '//' + window.location.host + '/static/img/resources/'
 
-class Goodies extends React.Component <DDD, {}>{
-  render() {
-    return (<div>
+        return (<div>
                 <div className="dash-tab-title">
                     <h3>Goodies</h3>
                     <h3 className="sub-title">Here are some goodies for you to use to easily link to your
@@ -59,22 +57,15 @@ class Goodies extends React.Component <DDD, {}>{
                     You can copy the HTML below to automatically link to your RebelMouse site.
                 </div>
                 <ul className="resource-follow-buttons">
-                    <li>
-                        <a href="#"><i className="icons follow-me"></i></a>
-                        <input name="follow-me" value=""/>
-                    </li>
-                    <li>
-                        <a href="#"><i className="icons follow-me-logo"></i></a>
-                        <input name="follow-me-logo" value=""/>
-                    </li>
-                    <li>
-                        <a href="#"><i className="icons follow-me-drk"></i></a>
-                        <input name="follow-me-drk" value=""/>
-                    </li>
-                    <li>
-                        <a href="#"><i className="icons follow-me-drk-logo"></i></a>
-                        <input name="follow-me-drk-logo" value=""/>
-                    </li>
+                {['follow-me-logo', 'follow-me-drk', 'follow-me-drk-logo'].map(
+                    (itemName:string, i:number) => {
+                        let val = '<a href="' + url +'"><img src="' + img + 'follow-me-logo.png"/></a>'
+                        return (<li key={i}>
+                            <a href="#"><i className="icons follow-me-logo"></i></a>
+                            <input onFocus={this.onFocus} readOnly={true} value={val}/>
+                        </li>)
+                    }
+                )}
                 </ul>
             </div>
             <div className="resource hidden">
@@ -149,6 +140,9 @@ class Goodies extends React.Component <DDD, {}>{
             </div>
             </div>
         )
+    }
+    private onFocus = (event: any) => {
+        event.target.select();
     }
 }
 
