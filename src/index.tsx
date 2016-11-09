@@ -1,3 +1,4 @@
+///<reference path="../typings/index.d.ts"/>
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Router, browserHistory } from 'react-router'
@@ -8,8 +9,9 @@ import DashboardApp = require('./components/Dashboard')
 import GoodiesSection = require('./routes/Goodies')
 // import GoodiesSection from './routes/Goodies'
 
-console.log('GoodiesSection', GoodiesSection);
-const rootRoute = {
+console.log('*---+ GoodiesSection +---*', GoodiesSection);
+console.log('*---+ DashboardApp +---*', DashboardApp)
+export const rootRoute = {
   childRoutes: [ {
     path: '/',
     getComponent(nextState: any, cb: Function) {
@@ -39,13 +41,3 @@ ReactDOM.render((
     routes={rootRoute}
   />
 ), document.getElementById('example'))
-
-// import * as React from "react";
-// import * as ReactDOM from "react-dom";
-//
-// import { Hello } from "./components/Hello";
-//
-// ReactDOM.render(
-//     <Hello compiler="TypeScript" framework="React" />,
-//     document.getElementById("example")
-// );
