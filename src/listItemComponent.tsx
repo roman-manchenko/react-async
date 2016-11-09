@@ -11,10 +11,10 @@ interface ComponentState {
 }
 
 export class ListItemComponent extends React.Component<ComponentProps, ComponentState> {
-    // constructor(props: any) { //FIX any
-    //     super(props)
-    //     stateConnector((state: any) => {listItem: state.listItems[this.props.index]}, this)
-    // }
+    constructor(props: any) { //FIX any
+        super(props)
+        stateConnector((state: any) => ({listItem: state.listItems[this.props.index]}), this)
+    }
 
     render() {
       const doneClass = this.state.listItem.done ? 'done' : ''
