@@ -1,6 +1,6 @@
-import * as React from 'react'
+import * as React from 'react';
 import { stateConnector } from './stateConnector';
-import { ListItem } from './listItemsActions';
+import { ListItem } from './redux-actions';
 
 interface ComponentProps {
   readonly index: number
@@ -11,10 +11,15 @@ interface ComponentState {
 }
 
 export class ListItemComponent extends React.Component<ComponentProps, ComponentState> {
-    // constructor(props: any) { //FIX any
-    //     super(props)
-    //     stateConnector((state: any) => {listItem: state.listItems[this.props.index]}, this)
-    // }
+    constructor(props: ComponentProps) {
+        super(props)
+        console.log(props);
+        stateConnector(
+          (function (state: any) {
+            console.log(props, state);
+            return {'listItem': state.listItems[this.props.index]};
+          }).bind(this), this)
+    }
 
     render() {
       const doneClass = this.state.listItem.done ? 'done' : ''

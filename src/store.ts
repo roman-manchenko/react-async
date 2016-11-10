@@ -1,15 +1,15 @@
 import { createStore, combineReducers, Unsubscribe } from 'redux'
-import { Action } from './listItemsActions'
-import { listItemsReducers, ListItemsState } from './listItemsReducers'
-// import { someOtherReducers, SomeOthersState } from 'someOtherReducers'
+import { Action, ListItem } from './redux-actions'
+import { listItemsReducers, ListItemsState } from './reducers'
 
 const reducer = combineReducers({
   listItems: listItemsReducers,
-  // someOther: someOtherReducers
 })
-export interface State extends ListItemsState/*, SomeOtherState*/ {}
+export interface State extends ListItemsState {}
 
-let store = createStore(reducer)
+let preLoad = {'listItems': [{done: false, description: 'Fuck it all!!!'}]}
+
+let store = createStore(reducer, preLoad)
 
 export const getState = () => store.getState() as State
 export const dispatch = (a:Action<any>) => store.dispatch(a)

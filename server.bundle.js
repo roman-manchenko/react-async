@@ -103,7 +103,7 @@
 	    });
 	});
 	function renderPage(appHtml) {
-	    return "\n    <!doctype html public=\"storage\">\n    <html>\n        <head>\n            <meta charset=\"UTF-8\" />\n            <title>Hello React!</title>\n        </head>\n        <body>\n            <div id=\"example\">" + appHtml + "</div>\n\n            <!-- Dependencies -->\n            <script src=\"./node_modules/react/dist/react.js\"></script>\n            <script src=\"./node_modules/react-dom/dist/react-dom.js\"></script>\n\n            <!-- Main -->\n            <script src=\"./dist/bundle.js\"></script>\n        </body>\n    </html>\n   ";
+	    return "\n    <!doctype html public=\"storage\">\n    <html>\n        <head>\n            <meta charset=\"UTF-8\" />\n            <title>--------Hello React!-------------</title>\n        </head>\n        <body>\n            <div id=\"example\">" + appHtml + "</div>\n\n            <!-- Dependencies -->\n            <script src=\"./node_modules/react/dist/react.js\"></script>\n            <script src=\"./node_modules/react-dom/dist/react-dom.js\"></script>\n\n            <!-- Main -->\n            <script src=\"./dist/bundle.js\"></script>\n        </body>\n    </html>\n   ";
 	}
 	var PORT = 8080;
 	app.listen(PORT, function () {

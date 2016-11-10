@@ -10,7 +10,7 @@ const hijackComponentWillUnmount = (component: any, callback: () => void) => {
     }
   }
 }
-export const stateConnector = <T>(mapState: (s:State) => T, component: Component<any, T>) => {
+export const stateConnector = <T>(mapState: (s: State) => T, component: Component<any, T>) => {
   let oldState = mapState(getState())
   let wasUnsubscribed = false
 

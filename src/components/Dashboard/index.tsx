@@ -1,5 +1,6 @@
 import * as React from "react";
-import {Router, Route, browserHistory, IndexLink} from "react-router";
+import { Router, Route, browserHistory, IndexLink} from "react-router";
+import { ListItemComponent } from "../../listItemComponent"
 
 interface DashboardConfig {
   config: string;
@@ -8,12 +9,16 @@ interface DashboardConfig {
 
 class DashboardApp extends React.Component<DashboardConfig, {}> {
   render() {
+      let listItem = {listItem: {'done': false, 'description': 'Fuck it all !!!'}}
+      let index = 0
+
       return (
         <div className="main clearfix">
-          <div id="dash-tab-title" className="dash-tab-title"></div>
+          <div id="dash-tab-title" className="dash-tab-title">
+            <ListItemComponent {...listItem} index={index} />
+          </div>
           <div id="subtabs-menu" className="sub-tabs">
             <ul>
-              // make it work with NavLink
               <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
               <li><IndexLink to="/goodies" activeClassName="active">Goodies</IndexLink></li>
             </ul>

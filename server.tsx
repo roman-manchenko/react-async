@@ -38,7 +38,7 @@ function renderPage(appHtml: string) {
     <html>
         <head>
             <meta charset="UTF-8" />
-            <title>Hello React!</title>
+            <title>--------Hello React!-------------</title>
         </head>
         <body>
             <div id="example">${appHtml}</div>
