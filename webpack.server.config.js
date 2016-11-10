@@ -9,8 +9,7 @@ module.exports = {
   target: 'node',
   resolve: {
       // Add '.ts' and '.tsx' as resolvable extensions.
-      extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
-
+      extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
   },
   // keep node_module paths out of the bundle
   externals: fs.readdirSync('./node_modules').concat([

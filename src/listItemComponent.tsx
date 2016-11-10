@@ -13,10 +13,8 @@ interface ComponentState {
 export class ListItemComponent extends React.Component<ComponentProps, ComponentState> {
     constructor(props: ComponentProps) {
         super(props)
-        console.log(props);
         stateConnector(
           (function (state: any) {
-            console.log(props, state);
             return {'listItem': state.listItems[this.props.index]};
           }).bind(this), this)
     }
